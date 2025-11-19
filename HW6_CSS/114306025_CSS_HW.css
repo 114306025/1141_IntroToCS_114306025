@@ -1,0 +1,167 @@
+body {
+    background-color: #eeede1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.main-container {
+    width: 100%;
+    background-color: #ffffff;
+    display: flex;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    overflow: hidden;
+}
+
+.left-panel {
+    width: 30%;
+    background-color: #6e8bb6;
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.photo-panel img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+}
+
+.name {
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 0;
+    color: white;
+}
+
+.subtitle {
+    margin-top: 4px;
+    margin-bottom: 20px;
+    color: white;
+    font-size: 14px;
+}
+
+.text-content {
+    padding: 20px;
+}
+
+.text-content h2 {
+    color: white;
+    border-bottom: 1px solid white;
+    padding-bottom: 6px;
+    margin-bottom: 12px;
+}
+
+.text-content p{
+    color: white;
+}
+
+.text-content li {
+    color: white;
+}
+
+.contact-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.contact-list li {
+    margin-bottom: 8px;
+}
+
+.nccu-logo {
+    width: 140px;
+    margin-top: 30px;
+}
+
+.right-panel {
+    width: 70%;
+    padding: 20px 30px;
+}
+
+.section {
+    margin-bottom: 30px;
+}
+
+.section-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 4px;
+}
+
+.timeline-item {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 10px;
+}
+
+.year {
+    font-weight: bold;
+}
+
+.tag {
+    display: inline-block;
+    background-color: #e6f0ff;
+    color: #003366;
+    padding: 6px 12px;
+    border-radius: 12px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.hw-lab-container {
+    display: flex;
+    gap: 20px;
+}
+
+.card {
+    background-color: #fafafa;
+    padding: 15px;
+    border-radius: 10px;
+    width: 50%;
+}
+
+.card ul {
+    list-style: disc;
+    padding-left: 20px;
+}
+
+.card a {
+    text-decoration: none;
+    color: #003399;
+}
+
+.card a:hover {
+    color: #ff6600;
+}
+
+.music-row {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.music-item {
+    text-align: center;
+    width: 22%;
+}
+
+.music-item img {
+    width: 35px;
+    height: 30px;
+}
+
+.music-item p {
+    margin-top: 6px;
+    font-size: 14px;
+}
+
+.music-note {
+    margin-top: 10px;
+    font-size: 14px;
+    line-height: 1.4;
+}
