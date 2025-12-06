@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <title>114306025_HW7_1A2B</title>
+</head>
+<body style="background-color: lightblue;">
+    <h1>114306025_HW7_1A2B</h1>
+    <span>Enter 4 unique numbers</span>
+    <input id="guessInput" type="text" maxlength="4">
+    <button id="submitBtn">Guess!</button>
+    <br><br>
+    <div>
+        Game Record:
+    </div>
+    <div id="record"></div>
+
+    <script>
+        function generateAnswer() {
+            var pool = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+            var ans = '';
+            for (var i = 0; i < 4; i++) {
+                var idx = Math.floor(Math.random() * pool.length);
+                ans += pool.splice(idx, 1)[0];
+            }
+            return ans;
+        }
+
+        function isValid(str) {
+            if (str.length !== 4) return false;
+            if (!/^\d{4}$/.test(str)) return false;
+            return new Set(str.split('')).size === 4;
+        }
+
+        function checkAB(guess, ans) {
+            var A = 0;
+            var B = 0;
+            for (var i = 0; i < 4; i++) {
+                if (guess[i] === ans[i]) {
+                    A++;
+                } else if (ans.indexOf(guess[i]) !== -1) {
+                    B++;
+                }
+            }
+            return A + "A" + B + "B";
+        }
+
+        var answer = generateAnswer();
+        var attempts = 0;
+
+        document.getElementById('submitBtn').onclick = function () {
+            var inputField = document.getElementById('guessInput');
+            var val = inputField.value.trim();
+
+            if (!isValid(val)) {
+                alert("Wrong, please input 4 unique numbers again");
+                return;
+            }
+
+            attempts++;
+
+            var result = checkAB(val, answer);
+            var rec = document.createElement('div');
+
+            rec.textContent = "第" + attempts + "次：" + val + " → " + result;
+
+            document.getElementById('record').appendChild(rec);
+
+            inputField.value = "";
+            inputField.focus();
+
+            if (result === "4A0B") {
+                alert("恭喜答對！總共嘗試 " + attempts + " 次。");
+            }
+        };
+    </script>
+</body>
+</html>
